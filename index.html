@@ -18,15 +18,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px;
+            padding: 12px;
         }
 
         .container {
-            max-width: 420px;
+            max-width: 400px;
             width: 100%;
             background: rgba(255, 255, 255, 0.98);
-            border-radius: 25px;
-            padding: 25px 20px;
+            border-radius: 20px;
+            padding: 20px 18px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
             text-align: center;
             animation: slideUp 0.6s ease-out;
@@ -46,81 +46,73 @@
         .urgent-banner {
             background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
             color: white;
-            padding: 10px 15px;
-            border-radius: 15px;
-            margin-bottom: 15px;
-            font-size: 14px;
+            padding: 8px 12px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            font-size: 13px;
             font-weight: bold;
-            animation: pulse-banner 2s infinite;
-        }
-
-        @keyframes pulse-banner {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
         }
 
         .logo {
-            font-size: 70px;
-            margin-bottom: 10px;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+            font-size: 50px;
+            margin-bottom: 8px;
         }
 
         h1 {
             color: #333;
-            font-size: 32px;
-            margin-bottom: 8px;
+            font-size: 26px;
+            margin-bottom: 6px;
             font-weight: bold;
             line-height: 1.2;
         }
 
         .highlight {
-            color: #0088cc;
-            font-size: 36px;
+            color: #ff6b6b;
+            font-size: 30px;
         }
 
         .subtitle {
             color: #555;
-            font-size: 18px;
-            margin-bottom: 20px;
+            font-size: 16px;
+            margin-bottom: 12px;
             font-weight: 600;
-            line-height: 1.4;
         }
 
         .proof {
             background: #fff9e6;
             border: 2px dashed #ffc107;
-            border-radius: 15px;
-            padding: 12px;
-            margin: 15px 0;
-            font-size: 15px;
+            border-radius: 12px;
+            padding: 10px;
+            margin: 12px 0;
+            font-size: 14px;
             color: #856404;
         }
 
         .proof-number {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
             color: #f57c00;
         }
 
         .benefits {
-            background: #f0f7ff;
-            border-radius: 15px;
-            padding: 15px;
-            margin: 15px 0;
             text-align: right;
+            margin: 12px 0;
         }
 
         .benefit {
+            background: #f0f7ff;
+            border-radius: 10px;
+            padding: 8px 10px;
+            margin: 6px 0;
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin: 10px 0;
-            font-size: 15px;
+            gap: 10px;
+            font-size: 14px;
         }
 
         .benefit-icon {
-            font-size: 28px;
-            min-width: 35px;
+            font-size: 24px;
+            min-width: 30px;
         }
 
         .benefit-text {
@@ -131,17 +123,39 @@
         .benefit-title {
             font-weight: bold;
             color: #1976d2;
-            font-size: 16px;
+            font-size: 14px;
         }
 
         .benefit-desc {
-            color: #555;
-            font-size: 13px;
-            margin-top: 2px;
+            color: #666;
+            font-size: 12px;
         }
 
-        .cta-section {
-            margin: 20px 0;
+        .timer {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px;
+            border-radius: 10px;
+            margin: 12px 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .timer-number {
+            font-size: 24px;
+            color: #ffc107;
+        }
+
+        .arrow-attention {
+            font-size: 40px;
+            animation: bounce-arrow 1s infinite;
+            color: #ff6b6b;
+            margin: 8px 0;
+        }
+
+        @keyframes bounce-arrow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(12px); }
         }
 
         .cta-button {
@@ -149,228 +163,181 @@
             width: 100%;
             background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
             color: white;
-            padding: 20px 30px;
-            font-size: 24px;
+            padding: 16px 25px;
+            font-size: 20px;
             font-weight: bold;
             border-radius: 50px;
             text-decoration: none;
-            margin: 15px 0;
+            margin: 12px 0;
             border: none;
             cursor: pointer;
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.5);
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
             animation: pulse-cta 2s infinite;
         }
 
         @keyframes pulse-cta {
             0%, 100% {
                 transform: scale(1);
-                box-shadow: 0 10px 30px rgba(255, 107, 107, 0.5);
             }
             50% {
                 transform: scale(1.05);
-                box-shadow: 0 15px 40px rgba(255, 107, 107, 0.7);
             }
         }
 
-        .cta-button:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.3);
-            transition: left 0.6s ease;
-        }
-
-        .cta-button:hover:before {
-            left: 100%;
-        }
-
-        .cta-button:active {
-            transform: scale(0.98);
-        }
-
         .telegram-icon {
-            display: inline-block;
-            margin-left: 8px;
-            font-size: 26px;
-            animation: bounce-icon 1.5s infinite;
-        }
-
-        @keyframes bounce-icon {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+            font-size: 22px;
+            margin-left: 6px;
         }
 
         .guarantee {
             background: #e8f5e9;
             border: 2px solid #4caf50;
-            border-radius: 15px;
-            padding: 12px;
-            margin: 15px 0;
-            font-size: 14px;
+            border-radius: 12px;
+            padding: 10px;
+            margin: 12px 0;
+            font-size: 12px;
             color: #2e7d32;
             font-weight: 600;
         }
 
-        .testimonials {
-            background: #f5f5f5;
-            border-radius: 15px;
-            padding: 15px;
-            margin: 15px 0;
-            text-align: right;
-        }
-
         .testimonial {
-            margin: 10px 0;
-            padding: 10px;
-            background: white;
+            background: #f5f5f5;
             border-radius: 10px;
-            font-size: 13px;
+            padding: 10px;
+            margin: 8px 0;
+            text-align: right;
+            font-size: 12px;
         }
 
         .testimonial-name {
             font-weight: bold;
             color: #0088cc;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .testimonial-text {
             color: #555;
-            line-height: 1.4;
-        }
-
-        .stars {
-            color: #ffc107;
-            font-size: 16px;
-        }
-
-        .timer {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 10px;
-            border-radius: 10px;
-            margin: 10px 0;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .timer-number {
-            font-size: 28px;
-            color: #ffc107;
-        }
-
-        .arrow-attention {
-            font-size: 50px;
-            animation: bounce-arrow 1s infinite;
-            color: #ff6b6b;
-            margin: 10px 0;
-        }
-
-        @keyframes bounce-arrow {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(15px); }
-        }
-
-        @media (max-height: 750px) {
-            .logo { font-size: 50px; }
-            h1 { font-size: 26px; }
-            .subtitle { font-size: 16px; }
-            .cta-button { padding: 16px 25px; font-size: 20px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="urgent-banner">
-            🔥 عرض لفترة محدودة - انضم الآن!
+            🔥 عرض محدود - انضم الآن!
         </div>
 
         <div class="logo">💎⛏️💰</div>
         
-        <h1>اربح <span class="highlight">$100</span> شهريًا</h1>
-        <p class="subtitle">من هاتفك فقط - بدون خبرة!</p>
+        <h1>اربح <span class="highlight">$100+</span></h1>
+        <p class="subtitle">من هاتفك - بدون خبرة!</p>
 
         <div class="proof">
-            <div class="proof-number">+1,247</div>
-            شخص من الأردن بدأوا الربح اليوم!
+            <div class="proof-number">+<span id="userCount">127</span></div>
+            شخص من الأردن ربحوا اليوم
         </div>
 
         <div class="benefits">
             <div class="benefit">
                 <div class="benefit-icon">🎁</div>
                 <div class="benefit-text">
-                    <div class="benefit-title">مكافأة فورية 1000 HASH</div>
-                    <div class="benefit-desc">بقيمة $100 دولار عند التسجيل</div>
+                    <div class="benefit-title">مكافأة فورية $100</div>
+                    <div class="benefit-desc">عند التسجيل مجاناً</div>
                 </div>
             </div>
 
             <div class="benefit">
                 <div class="benefit-icon">⚡</div>
                 <div class="benefit-text">
-                    <div class="benefit-title">سحب يومي سريع</div>
-                    <div class="benefit-desc">استلم أموالك خلال 24 ساعة</div>
+                    <div class="benefit-title">سحب سريع 24 ساعة</div>
+                    <div class="benefit-desc">استلم أموالك بسرعة</div>
                 </div>
             </div>
 
             <div class="benefit">
                 <div class="benefit-icon">💵</div>
                 <div class="benefit-text">
-                    <div class="benefit-title">اربح بدون حد أقصى</div>
-                    <div class="benefit-desc">كلما عملت أكثر، ربحت أكثر</div>
+                    <div class="benefit-title">ربح غير محدود</div>
+                    <div class="benefit-desc">كلما عملت أكثر ربحت أكثر</div>
                 </div>
             </div>
         </div>
 
-        <div class="testimonials">
-            <div class="testimonial">
-                <div class="testimonial-name">⭐⭐⭐⭐⭐ أحمد من عمان</div>
-                <div class="testimonial-text">"ربحت $150 في أول أسبوع! الأمر سهل جداً"</div>
-            </div>
-            <div class="testimonial">
-                <div class="testimonial-name">⭐⭐⭐⭐⭐ فاطمة من إربد</div>
-                <div class="testimonial-text">"أفضل طريقة للربح من البيت، شكراً!"</div>
-            </div>
+        <div class="testimonial">
+            <div class="testimonial-name">⭐⭐⭐⭐⭐ أحمد - عمان</div>
+            <div class="testimonial-text">"ربحت $150 في أول أسبوع!"</div>
+        </div>
+
+        <div class="testimonial">
+            <div class="testimonial-name">⭐⭐⭐⭐⭐ فاطمة - إربد</div>
+            <div class="testimonial-text">"طريقة سهلة للربح من البيت"</div>
         </div>
 
         <div class="timer">
-            ⏰ متبقي <span class="timer-number" id="countdown">59</span> ثانية<br>
-            للحصول على المكافأة المجانية!
+            ⏰ باقي <span class="timer-number" id="countdown">59</span> ثانية<br>
+            للحصول على المكافأة المجانية
         </div>
 
-        <div class="arrow-attention">👇👇👇</div>
+        <div class="arrow-attention">👇</div>
 
-        <div class="cta-section">
-            <a href="https://t.me/jordanminer_bot?start=ig_landing" class="cta-button" id="startButton">
-                <span class="telegram-icon">✈️</span>
-                ابدأ الربح الآن - مجاناً!
-            </a>
-        </div>
+        <a href="https://t.me/jordanminer_bot?start=ig_landing" class="cta-button" id="startButton">
+            <span class="telegram-icon">✈️</span>
+            ابدأ الربح الآن
+        </a>
 
         <div class="guarantee">
-            ✅ 100% آمن ومضمون<br>
-            ✅ لا توجد رسوم خفية<br>
-            ✅ دعم فني 24/7
+            ✅ آمن 100% • لا رسوم • دعم 24/7
         </div>
     </div>
 
     <script>
+        // Realistic growing counter
+        function getInitialCount() {
+            // Базовое число + случайное добавление
+            const base = 127; // Стартовое число
+            const today = new Date().getDate();
+            const thisHour = new Date().getHours();
+            
+            // Добавляем 3-7 человек за каждый час дня
+            const hourlyGrowth = thisHour * Math.floor(Math.random() * 5 + 3);
+            
+            // Добавляем случайное число от 0 до 20
+            const random = Math.floor(Math.random() * 20);
+            
+            return base + hourlyGrowth + random;
+        }
+
+        let currentCount = getInitialCount();
+        const countEl = document.getElementById('userCount');
+        countEl.textContent = currentCount;
+
+        // Медленный рост счётчика (каждые 10-30 секунд +1)
+        setInterval(() => {
+            if (Math.random() > 0.5) { // 50% шанс
+                currentCount++;
+                countEl.textContent = currentCount;
+                
+                // Анимация при увеличении
+                countEl.style.transform = 'scale(1.2)';
+                countEl.style.color = '#4caf50';
+                setTimeout(() => {
+                    countEl.style.transform = 'scale(1)';
+                    countEl.style.color = '#f57c00';
+                }, 300);
+            }
+        }, Math.random() * 20000 + 10000); // 10-30 секунд
+
         // Countdown timer
         let timeLeft = 59;
         const countdownEl = document.getElementById('countdown');
         
-        const timer = setInterval(() => {
+        setInterval(() => {
             timeLeft--;
             countdownEl.textContent = timeLeft;
             
             if (timeLeft <= 0) {
-                timeLeft = 59; // Reset
+                timeLeft = 59;
             }
             
-            // Make it red when under 10 seconds
             if (timeLeft <= 10) {
                 countdownEl.style.color = '#ff6b6b';
             } else {
@@ -386,22 +353,9 @@
                 return false;
             }
             clicked = true;
-            
-            console.log('CTA Button clicked!');
-            
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'click', {
-                    'event_category': 'CTA',
-                    'event_label': 'Start Earning Now'
-                });
-            }
-            
+            console.log('CTA clicked!');
             setTimeout(() => { clicked = false; }, 3000);
         });
-
-        // Log page view
-        console.log('High-converting landing page loaded');
-        console.log('User Agent:', navigator.userAgent);
     </script>
 </body>
 </html>
