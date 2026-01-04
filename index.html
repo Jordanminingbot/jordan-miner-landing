@@ -2,8 +2,9 @@
 <html dir="rtl" lang="ar">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>اربح المال الآن - Jordan Miner Bot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan Miner - لعبة تيليجرام تفاعلية</title>
+    <meta name="description" content="لعبة تيليجرام تفاعلية مع نظام تقدم بسيط ومثير">
     <style>
         * {
             margin: 0;
@@ -14,347 +15,412 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px;
+            color: #333;
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 400px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 20px;
-            padding: 20px 18px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 30px;
             text-align: center;
-            animation: slideUp 0.6s ease-out;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .urgent-banner {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
             color: white;
-            padding: 8px 12px;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            font-size: 13px;
-            font-weight: bold;
         }
 
-        .logo {
-            font-size: 50px;
-            margin-bottom: 8px;
+        .hero-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
         }
 
-        h1 {
-            color: #333;
-            font-size: 26px;
-            margin-bottom: 6px;
-            font-weight: bold;
-            line-height: 1.2;
-        }
-
-        .highlight {
-            color: #ff6b6b;
-            font-size: 30px;
-        }
-
-        .subtitle {
-            color: #555;
-            font-size: 16px;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
-        .proof {
-            background: #fff9e6;
-            border: 2px dashed #ffc107;
-            border-radius: 12px;
-            padding: 10px;
-            margin: 12px 0;
-            font-size: 14px;
-            color: #856404;
-        }
-
-        .proof-number {
-            font-size: 24px;
-            font-weight: bold;
-            color: #f57c00;
-        }
-
-        .benefits {
-            text-align: right;
-            margin: 12px 0;
-        }
-
-        .benefit {
-            background: #f0f7ff;
-            border-radius: 10px;
-            padding: 8px 10px;
-            margin: 6px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-        }
-
-        .benefit-icon {
-            font-size: 24px;
-            min-width: 30px;
-        }
-
-        .benefit-text {
-            flex: 1;
-            text-align: right;
-        }
-
-        .benefit-title {
-            font-weight: bold;
-            color: #1976d2;
-            font-size: 14px;
-        }
-
-        .benefit-desc {
-            color: #666;
-            font-size: 12px;
-        }
-
-        .timer {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 8px;
-            border-radius: 10px;
-            margin: 12px 0;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .timer-number {
-            font-size: 24px;
-            color: #ffc107;
-        }
-
-        .arrow-attention {
-            font-size: 40px;
-            animation: bounce-arrow 1s infinite;
-            color: #ff6b6b;
-            margin: 8px 0;
-        }
-
-        @keyframes bounce-arrow {
+        @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(12px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
 
         .cta-button {
-            display: block;
-            width: 100%;
-            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
-            color: white;
-            padding: 16px 25px;
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 18px 40px;
             font-size: 20px;
             font-weight: bold;
             border-radius: 50px;
             text-decoration: none;
-            margin: 12px 0;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
-            animation: pulse-cta 2s infinite;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
         }
 
-        @keyframes pulse-cta {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
 
-        .telegram-icon {
-            font-size: 22px;
-            margin-left: 6px;
+        /* Features Section */
+        .features {
+            padding: 60px 30px;
+            background: #f8f9fa;
         }
 
-        .guarantee {
-            background: #e8f5e9;
-            border: 2px solid #4caf50;
-            border-radius: 12px;
-            padding: 10px;
-            margin: 12px 0;
-            font-size: 12px;
-            color: #2e7d32;
-            font-weight: 600;
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #333;
         }
 
-        .testimonial {
-            background: #f5f5f5;
-            border-radius: 10px;
-            padding: 10px;
-            margin: 8px 0;
+        .feature-grid {
+            display: grid;
+            gap: 25px;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
             text-align: right;
-            font-size: 12px;
         }
 
-        .testimonial-name {
+        .feature-icon {
+            font-size: 40px;
+            min-width: 50px;
+        }
+
+        .feature-content h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #667eea;
+        }
+
+        .feature-content p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* How it Works */
+        .how-it-works {
+            padding: 60px 30px;
+            background: white;
+        }
+
+        .steps {
+            display: grid;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .step {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-right: 5px solid #667eea;
+            text-align: right;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
             font-weight: bold;
-            color: #0088cc;
-            margin-bottom: 4px;
+            margin-left: 15px;
         }
 
-        .testimonial-text {
-            color: #555;
+        .step h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .step p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Target Audience */
+        .audience {
+            padding: 60px 30px;
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .audience-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .audience-content p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 60px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-button-white {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 20px 50px;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Legal Footer */
+        .legal {
+            padding: 50px 30px;
+            background: #2c3e50;
+            color: #ecf0f1;
+        }
+
+        .legal-grid {
+            display: grid;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .legal-section h3 {
+            color: #667eea;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .legal-section p {
+            color: #bdc3c7;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .legal-links {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #34495e;
+        }
+
+        .legal-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+        }
+
+        .legal-links a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 20px;
+            color: #7f8c8d;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 26px; }
+            .hero p { font-size: 16px; }
+            .section-title { font-size: 24px; }
+            .cta-section h2 { font-size: 26px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="urgent-banner">
-            🔥 عرض محدود - انضم الآن!
-        </div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-icon">🎮⛏️</div>
+            <h1>لعبة تيليجرام تفاعلية مع آليات بسيطة</h1>
+            <p>شارك، نفذ الإجراءات وطور تقدمك داخل اللعبة</p>
+            <a href="https://t.me/jordanminer_bot?start=game_landing" class="cta-button">
+                ✈️ انتقل إلى اللعبة
+            </a>
+        </section>
 
-        <div class="logo">💎⛏️💰</div>
-        
-        <h1>اربح <span class="highlight">$100+</span></h1>
-        <p class="subtitle">من هاتفك - بدون خبرة!</p>
+        <!-- Features -->
+        <section class="features">
+            <h2 class="section-title">ما هي هذه اللعبة؟</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🎮</div>
+                    <div class="feature-content">
+                        <h3>لعبة تيليجرام مع عناصر التلعيب</h3>
+                        <p>تجربة تفاعلية ممتعة مباشرة في تيليجرام</p>
+                    </div>
+                </div>
 
-        <div class="proof">
-            <div class="proof-number">+<span id="userCount">127</span></div>
-            شخص من الأردن ربحوا اليوم
-        </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-content">
+                        <h3>إجراءات بسيطة ونظام تقدم واضح</h3>
+                        <p>آليات سهلة الفهم مناسبة للجميع</p>
+                    </div>
+                </div>
 
-        <div class="benefits">
-            <div class="benefit">
-                <div class="benefit-icon">🎁</div>
-                <div class="benefit-text">
-                    <div class="benefit-title">مكافأة فورية $100</div>
-                    <div class="benefit-desc">عند التسجيل مجاناً</div>
+                <div class="feature-item">
+                    <div class="feature-icon">⭐</div>
+                    <div class="feature-content">
+                        <h3>نقاط اللعبة الداخلية</h3>
+                        <p>نظام نقاط لتتبع تقدمك في اللعبة</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🔄</div>
+                    <div class="feature-content">
+                        <h3>تحديثات وأنشطة منتظمة</h3>
+                        <p>محتوى جديد ومهام ممتعة باستمرار</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it Works -->
+        <section class="how-it-works">
+            <h2 class="section-title">كيف تعمل؟</h2>
+            <div class="steps">
+                <div class="step">
+                    <h3><span class="step-number">1</span>افتح لعبة تيليجرام</h3>
+                    <p>ابدأ اللعبة مباشرة من تطبيق تيليجرام</p>
+                </div>
+
+                <div class="step">
+                    <h3><span class="step-number">2</span>شارك في إجراءات اللعبة</h3>
+                    <p>نفذ المهام البسيطة والتفاعلات الممتعة</p>
+                </div>
+
+                <div class="step">
+                    <h3><span class="step-number">3</span>احصل على نقاط اللعبة الداخلية</h3>
+                    <p>اجمع النقاط من خلال نشاطك في اللعبة</p>
+                </div>
+
+                <div class="step">
+                    <h3><span class="step-number">4</span>طور تقدمك</h3>
+                    <p>ارتق بمستواك واستمتع بالمحتوى الجديد</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Target Audience -->
+        <section class="audience">
+            <h2 class="section-title">لمن هذا المنتج؟</h2>
+            <div class="audience-content">
+                <p>
+                    مناسب للمستخدمين المهتمين بصيغ تيليجرام التفاعلية وآليات الألعاب.
+                    تجربة ممتعة لمن يحب الألعاب البسيطة والأنشطة التفاعلية على تيليجرام.
+                </p>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="cta-section">
+            <h2>جرب اللعبة الآن</h2>
+            <p>انضم إلى اللاعبين الآخرين واستمتع بالتجربة التفاعلية</p>
+            <a href="https://t.me/jordanminer_bot?start=game_landing" class="cta-button-white">
+                ✈️ الانتقال إلى تيليجرام
+            </a>
+        </section>
+
+        <!-- Legal Footer -->
+        <section class="legal">
+            <div class="legal-grid">
+                <div class="legal-section">
+                    <h3>إخلاء المسؤولية</h3>
+                    <p>
+                        هذا المنتج عبارة عن منصة لعبة ترفيهية. ليس خدمة استثمارية أو مالية أو دفع.
+                        يتم استخدام نقاط اللعبة الداخلية حصريًا ضمن المنصة ولا تضمن قيمة نقدية.
+                        هذه لعبة للترفيه فقط.
+                    </p>
+                </div>
+
+                <div class="legal-section">
+                    <h3>شروط الاستخدام</h3>
+                    <p>
+                        باستخدام هذه اللعبة، فإنك توافق على أن هذا منتج ترفيهي بحت.
+                        النقاط الداخلية ليس لها قيمة مالية خارج المنصة.
+                        نحن لا نقدم أي ضمانات مالية أو وعود بالعوائد.
+                    </p>
+                </div>
+
+                <div class="legal-section">
+                    <h3>سياسة الخصوصية</h3>
+                    <p>
+                        نحن نحترم خصوصيتك. يتم استخدام بياناتك فقط لتوفير تجربة اللعبة.
+                        لا نشارك معلوماتك الشخصية مع أطراف ثالثة.
+                        جميع البيانات محمية ومشفرة.
+                    </p>
                 </div>
             </div>
 
-            <div class="benefit">
-                <div class="benefit-icon">⚡</div>
-                <div class="benefit-text">
-                    <div class="benefit-title">سحب سريع 24 ساعة</div>
-                    <div class="benefit-desc">استلم أموالك بسرعة</div>
-                </div>
+            <div class="legal-links">
+                <a href="#disclaimer">إخلاء المسؤولية</a>
+                <a href="#terms">شروط الخدمة</a>
+                <a href="#privacy">سياسة الخصوصية</a>
             </div>
 
-            <div class="benefit">
-                <div class="benefit-icon">💵</div>
-                <div class="benefit-text">
-                    <div class="benefit-title">ربح غير محدود</div>
-                    <div class="benefit-desc">كلما عملت أكثر ربحت أكثر</div>
-                </div>
+            <div class="copyright">
+                © 2025 Jordan Miner Game. جميع الحقوق محفوظة. منتج ترفيهي فقط.
             </div>
-        </div>
-
-        <div class="testimonial">
-            <div class="testimonial-name">⭐⭐⭐⭐⭐ أحمد - عمان</div>
-            <div class="testimonial-text">"ربحت $150 في أول أسبوع!"</div>
-        </div>
-
-        <div class="testimonial">
-            <div class="testimonial-name">⭐⭐⭐⭐⭐ فاطمة - إربد</div>
-            <div class="testimonial-text">"طريقة سهلة للربح من البيت"</div>
-        </div>
-
-        <div class="timer">
-            ⏰ باقي <span class="timer-number" id="countdown">59</span> ثانية<br>
-            للحصول على المكافأة المجانية
-        </div>
-
-        <div class="arrow-attention">👇</div>
-
-        <a href="https://t.me/jordanminer_bot?start=ig_landing" class="cta-button" id="startButton">
-            <span class="telegram-icon">✈️</span>
-            ابدأ الربح الآن
-        </a>
-
-        <div class="guarantee">
-            ✅ آمن 100% • لا رسوم • دعم 24/7
-        </div>
+        </section>
     </div>
 
     <script>
-        // Realistic growing counter
-        function getInitialCount() {
-            // Базовое число + случайное добавление
-            const base = 127; // Стартовое число
-            const today = new Date().getDate();
-            const thisHour = new Date().getHours();
-            
-            // Добавляем 3-7 человек за каждый час дня
-            const hourlyGrowth = thisHour * Math.floor(Math.random() * 5 + 3);
-            
-            // Добавляем случайное число от 0 до 20
-            const random = Math.floor(Math.random() * 20);
-            
-            return base + hourlyGrowth + random;
-        }
-
-        let currentCount = getInitialCount();
-        const countEl = document.getElementById('userCount');
-        countEl.textContent = currentCount;
-
-        // Медленный рост счётчика (каждые 10-30 секунд +1)
-        setInterval(() => {
-            if (Math.random() > 0.5) { // 50% шанс
-                currentCount++;
-                countEl.textContent = currentCount;
-                
-                // Анимация при увеличении
-                countEl.style.transform = 'scale(1.2)';
-                countEl.style.color = '#4caf50';
-                setTimeout(() => {
-                    countEl.style.transform = 'scale(1)';
-                    countEl.style.color = '#f57c00';
-                }, 300);
-            }
-        }, Math.random() * 20000 + 10000); // 10-30 секунд
-
-        // Countdown timer
-        let timeLeft = 59;
-        const countdownEl = document.getElementById('countdown');
-        
-        setInterval(() => {
-            timeLeft--;
-            countdownEl.textContent = timeLeft;
-            
-            if (timeLeft <= 0) {
-                timeLeft = 59;
-            }
-            
-            if (timeLeft <= 10) {
-                countdownEl.style.color = '#ff6b6b';
-            } else {
-                countdownEl.style.color = '#ffc107';
-            }
-        }, 1000);
-
-        // Track button click
-        let clicked = false;
-        document.getElementById('startButton').addEventListener('click', function(e) {
-            if (clicked) {
-                e.preventDefault();
-                return false;
-            }
-            clicked = true;
-            console.log('CTA clicked!');
-            setTimeout(() => { clicked = false; }, 3000);
+        // Simple click tracking
+        document.querySelectorAll('a[href*="t.me"]').forEach(link => {
+            link.addEventListener('click', function() {
+                console.log('Game link clicked');
+            });
         });
     </script>
 </body>
